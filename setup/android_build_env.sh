@@ -8,7 +8,7 @@
 
 LATEST_MAKE_VERSION="4.3"
 UBUNTU_16_PACKAGES="libesd0-dev"
-UBUNTU_20_PACKAGES="libncurses5 curl python-is-python3"
+UBUNTU_20_PACKAGES="libncurses curl python-is-python3"
 DEBIAN_10_PACKAGES="libncurses5"
 DEBIAN_11_PACKAGES="libncurses5"
 PACKAGES=""
@@ -17,7 +17,7 @@ sudo apt install software-properties-common -y
 sudo apt update
 
 # Install lsb-core packages
-sudo apt install lsb-core -y
+sudo apt install lsb-release -y
 
 LSB_RELEASE="$(lsb_release -d | cut -d ':' -f 2 | sed -e 's/^[[:space:]]*//')"
 
@@ -36,11 +36,11 @@ sudo DEBIAN_FRONTEND=noninteractive \
     adb autoconf automake axel bc bison build-essential \
     ccache clang cmake curl expat fastboot flex g++ \
     g++-multilib gawk gcc gcc-multilib git git-lfs gnupg gperf \
-    htop imagemagick lib32ncurses5-dev lib32z1-dev libtinfo5 libc6-dev libcap-dev \
-    libexpat1-dev libgmp-dev '^liblz4-.*' '^liblzma.*' libmpc-dev libmpfr-dev libncurses5-dev \
+    htop imagemagick libncurses-dev lib32z1-dev libtinfo6 libc6-dev libcap-dev \
+    libexpat1-dev libgmp-dev '^liblz4-.*' '^liblzma.*' libmpc-dev libmpfr-dev libncurses-dev \
     libsdl1.2-dev libssl-dev libtool libxml2 libxml2-utils '^lzma.*' lzop \
     maven ncftp ncurses-dev patch patchelf pkg-config pngcrush \
-    pngquant python2.7 python3-pyelftools python-all-dev re2c schedtool squashfs-tools subversion \
+    pngquant python3.13 python3-pyelftools python3.13-dev python-is-python3 re2c schedtool squashfs-tools subversion \
     texinfo unzip w3m xsltproc zip zlib1g-dev lzip \
     libxml-simple-perl libswitch-perl apt-utils rsync \
     ${PACKAGES} -y

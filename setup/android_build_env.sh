@@ -29,6 +29,8 @@ elif [[ ${LSB_RELEASE} =~ "Debian GNU/Linux 10" ]]; then
     PACKAGES="${DEBIAN_10_PACKAGES}"
 elif [[ ${LSB_RELEASE} =~ "Debian GNU/Linux 11" ]]; then
     PACKAGES="${DEBIAN_11_PACKAGES}"
+elif [[ ${LSB_RELEASE} =~ "Debian GNU/Linux 12" || ${LSB_RELEASE} =~ "Debian GNU/Linux 13" ]]; then
+    PACKAGES="libncurses-dev"
 fi
 
 sudo DEBIAN_FRONTEND=noninteractive \
